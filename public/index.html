@@ -13,14 +13,13 @@
 <body>
   <!-- Cabeçalho com logo e menu do site  -->
   <header>
-    <img alt="Logotipo" src="img/logo.png">
+    <img alt="Logotipo" src="./assets/img/logo.png">
     <nav>
       <a href="explorer.html">Explorador de Séries</a>
     </nav>
   </header>
   <main>
     <section>
-      <!-- Seção 1 - estrutura de carrosel (slider) apresentando as séries populares com foto, nome e descritivo. Deve ter botões para acessar as demais séries em destaque (próxima e anterior) ORIENTAÇÃO: use componente do bootstrap-->
       <div id="carroselSeries" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carroselSeries" data-bs-slide-to="0" class="active"
@@ -66,13 +65,11 @@
       </div>
     </section>
 
-    <!-- Seção 2 - grupo de cards com informações das séries mais recentes mantidos no ambiente do The Movie DB. ORIENTAÇÃO: use componente do bootstrap-->
      <section>
       <div class="container my-5">
         <h2 class="mb-4">Séries Recentes</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
       
-          <!-- Card 1 -->
           <div class="col">
             <div class="card h-100">
               <img src="./assets/img/arcane_tmdb.webp" class="card-img-top" alt="Imagem da série Arcane">
@@ -86,7 +83,6 @@
             </div>
           </div>
       
-          <!-- Card 2 -->
           <div class="col">
             <div class="card h-100">
               <img src="./assets/img/one.webp" class="card-img-top" alt="Imagem do anime One Piece">
@@ -100,7 +96,6 @@
             </div>
           </div>
       
-          <!-- Card 3-->
           <div class="col">
             <div class="card h-100">
               <img src="./assets/img/deadpool_wolverine.webp" class="card-img-top" alt="Imagem da série Deadpool & Wolverine">

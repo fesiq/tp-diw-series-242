@@ -3,4 +3,16 @@
     color: #FFF;
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+}
 
+header img, header nav {
+    padding: 20px;
+}
+
+header nav a {
+    text-decoration:  none;
+    text-wrap: wrap;
+}

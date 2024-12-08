@@ -1,22 +1,33 @@
 {
     "perfil": {
-    "id": 1,
-    "nome": "Fernando Siqueira",
-    "curso": "engenharia de software",
-    "email": "fernandosiqueira994@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/fesiq/",
-    "facebook": "não há",
-    "twitter": "não há",
-    "instagram": "não há",
-    "bio": "Estudante de engenharia de software, motivado pela possibilidade de uma vida melhor 🤚",
-    "avatar": "/assets/img/avatar.jpg"
-},
-"favoritas": [
-{
-    "id": 1,
-    "serieId": 1,
-    "usuarioId": 1
+        "id": 1,
+        "nome": "Fernando Siqueira",
+        "curso": "engenharia de software",
+        "email": "fernandosiqueira994@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/fesiq/",
+        "facebook": "não há",
+        "twitter": "não há",
+        "instagram": "não há",
+        "bio": "Estudante de engenharia de software, motivado pela possibilidade de uma vida melhor 🤚",
+        "avatar": "/assets/img/avatar.jpg"
+    },
+    "autor ": {
+        "id": 1,
+        "nome": "Fernando Siqueira",
+        "curso": "engenharia de software",
+        "email": "fernandosiqueira994@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/fesiq/",
+        "facebook": "não há",
+        "twitter": "não há",
+        "instagram": "não há",
+        "bio": "Estudante de engenharia de software, motivado pela possibilidade de uma vida melhor 🤚",
+        "avatar": "/assets/img/avatar.jpg"
+    },
+    "favoritas": [
+        {
+            "id": 1,
+            "serieId": 1,
+            "usuarioId": 1
+        }
+    ]
 }
-]
-  }
-  

@@ -10,7 +10,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-dark text-white">
   <!-- Cabeçalho com logo e menu do site  -->
   <header>
     <img alt="Logotipo" src="./assets/img/logo.png">
@@ -30,21 +30,21 @@
             aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active bg-dark text-white">
             <img src="assets/img/fallout_prime_video.jpg" class="d-block w-100" alt="Fallout - Prime Video">
             <div class="carousel-caption d-none d-md-block">
               <h5>Fallout</h5>
               <p>Baseada na franquia de jogos, a série retrata um mundo pós-apocalíptico onde sobreviventes lutam contra ameaças em um cenário devastado.</p>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item bg-dark text-white">
             <img src="assets/img/o_simpatizante_hbo.jpg" class="d-block w-100" alt="O Simpatizante - MAX">
             <div class="carousel-caption d-none d-md-block">
               <h5>O Simpatizante</h5>
               <p>Em um suspense envolvente, um espião vietnamita se infiltra no submundo de Los Angeles, explorando temas de identidade e traição.</p>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item bg-dark text-white">
             <img src="assets/img/os_outros_globoplay.jpeg" class="d-block w-100" alt="Os Outros - Globoplay">
             <div class="carousel-caption d-none d-md-block">
               <h5>Os Outros</h5>
@@ -71,7 +71,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
       
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 bg-dark text-white">
               <img src="./assets/img/arcane_tmdb.webp" class="card-img-top" alt="Imagem da série Arcane">
               <div class="card-body">
                 <h5 class="card-title">Arcane</h5>
@@ -84,7 +84,7 @@
           </div>
       
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 bg-dark text-white">
               <img src="./assets/img/one.webp" class="card-img-top" alt="Imagem do anime One Piece">
               <div class="card-body">
                 <h5 class="card-title">One Piece (Anime)</h5>
@@ -97,7 +97,7 @@
           </div>
       
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 bg-dark text-white">
               <img src="./assets/img/deadpool_wolverine.webp" class="card-img-top" alt="Imagem da série Deadpool & Wolverine">
               <div class="card-body">
                 <h5 class="card-title">Deadpool & Wolverine</h5>
@@ -114,8 +114,31 @@
       
      </section>
     <!-- Seção 3 - Informações sobre responsável pela criação do site site (aluno/aluna)  -->
+    <section>
+      <div class="container" id="info-autor">
+        <h2>Sobre o autor</h2>
+        <h4 id="nome-autor">Fernando Siqueira</h3>
+        <img src="./assets/img/avatar.jpg" alt="Foto do autor">
+        <div id="dados-autor">
+          <p id="bio">Estudante de engenharia de software, motivado pela possibilidade de uma vida melhor 🤚</p>
+          <a id="email" href="mailto:fernandosiqueira994@gmail.com">mail me</a>
+          <a id="github" href="https://github.com/fesiq/">GitHub</a>
+          <a id="linkedin" href="https://www.linkedin.com/in/fesiq">LinkedIn</a>
+        </div>
+      </div>
+    </section>
     <!-- Seção 4 - grupo de cards com informações das sérias favoritas. ORIENTAÇÃO: use componente do bootstrap-->
+    <section class="container mt-5">
+      <h2 class="text-center mb-4">Séries Favoritas</h2>
+      <div class="row" id="favorite-series">
+        <!-- Os cards das séries favoritas serão carregados dinamicamente aqui -->
+      </div>
+    </section>
   </main>
+
+  <footer class="bg-dark text-white py-3 mt-5 text-center">
+    <p>&copy; 2024 Portal de Séries por Fernando Siqueira. Todos os direitos reservados.</p>
+  </footer>
   <!-- scripts do Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

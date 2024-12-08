@@ -41,11 +41,14 @@ async function loadNewSeries() {
         data.results.slice(0, 6).forEach(serie => {
             newSeriesContainer.innerHTML += `
                 <div class="col-md-4 mb-4">
-                    <div class="card">
+                    <div class="card h-100 bg-dark text-white">
                         <img src="${TMDB_IMAGE_URL}${serie.poster_path}" class="card-img-top" alt="${serie.name}">
                         <div class="card-body">
                             <h5 class="card-title">${serie.name}</h5>
                             <p class="card-text">${serie.overview.slice(0, 100)}...</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
@@ -82,6 +85,9 @@ async function loadFavoriteSeries() {
                         <div class="card-body">
                             <h5 class="card-title">${serie.title}</h5>
                             <p class="card-text">${serie.description}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Saiba Mais</a>
                         </div>
                     </div>
                 </div>

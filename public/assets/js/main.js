@@ -75,9 +75,9 @@ async function loadAuthorInfo() {
 async function loadFavoriteSeries() {
     const url = `${BASE_URL}/favoritas`;
     const favorites = await fetchData(url);
+    const favoriteSeriesContainer = document.getElementById("favorite-series");
 
     if (favorites) {
-        const favoriteSeriesContainer = document.getElementById("favorite-series");
         favorites.forEach(serie => {
             favoriteSeriesContainer.innerHTML += `
                 <div class="col-md-4 mb-4">

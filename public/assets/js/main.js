@@ -48,7 +48,7 @@ async function loadNewSeries() {
                             <p class="card-text">${serie.overview.slice(0, 100)}...</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Saiba Mais</a>
+                            <a href="detalhes.html?id_imdb=${serie.id}" class="btn btn-primary">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ async function loadFavoriteSeries() {
                             <h5 class="card-title">${serie.name}</h5>
                         </div>
                         <div class="card-footer">
-                            <a href="detalhes.html?id=${serie.id}" class="btn btn-primary">Saiba Mais</a>
+                            <a href="detalhes.html?id_imdb=${serie.id}" class="btn btn-primary">Saiba Mais</a>
                             <a href="" class="btn btn-secondary">Remover dos favoritos</a>
                         </div>
                     </div>

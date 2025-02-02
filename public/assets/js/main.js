@@ -80,14 +80,13 @@ async function loadFavoriteSeries() {
         favorites.forEach(serie => {
             favoriteSeriesContainer.innerHTML += `
                 <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="${serie.image}" class="card-img-top" alt="${serie.title}">
+                    <div class="card bg-dark text-white">
+                        <img src="${TMDB_IMAGE_URL}${serie.poster_path}" class="card-img-top" alt="${serie.name}">
                         <div class="card-body">
-                            <h5 class="card-title">${serie.title}</h5>
-                            <p class="card-text">${serie.description}</p>
+                            <h5 class="card-title">${serie.name}</h5>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Saiba Mais</a>
+                            <a href="detalhes.html?id=${serie.id}" class="btn btn-primary">Saiba Mais</a>
                         </div>
                     </div>
                 </div>

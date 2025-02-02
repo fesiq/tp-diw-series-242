@@ -77,6 +77,13 @@ async function loadFavoriteSeries() {
     const favorites = await fetchData(url);
     const favoriteSeriesContainer = document.getElementById("favorite-series");
 
+    if(favorites == "") {
+        favoriteSeriesContainer.innerHTML += `
+        <div>
+            <p>Não há séries favoritas. Procure pelos seus favoritos agora mesmo!</p>
+        </div>`;
+    }
+
     if (favorites) {
         favorites.forEach(serie => {
             favoriteSeriesContainer.innerHTML += `

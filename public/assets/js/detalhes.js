@@ -1,7 +1,7 @@
-const JSON_SERVER_FAVORITAS = "http://localhost:3000/favoritas";
-const TMDB_API_KEY = "2f10809f73d8fa55a72552fcb4d21da2";
-const TMDB_BASE_URL = "https://api.themoviedb.org/3";
-const TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
+const JSON_SERVER_FAVORITAS = `${CONFIG.JSON_SERVER_URL}/favoritas`;
+const TMDB_API_KEY = CONFIG.TMDB_API_KEY;
+const TMDB_BASE_URL = CONFIG.TMDB_BASE_URL;
+const TMDB_IMAGE_URL = CONFIG.TMDB_IMAGE_URL;
 
 
 // Elemento onde os detalhes serão exibidos

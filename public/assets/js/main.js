@@ -108,6 +108,11 @@ async function loadFavoriteSeries() {
 }
 
 async function removerFavorito(idTmdb) {
+    const resposta = confirm("Tem certeza de que quer remover a série dos favoritos?");
+    if(!resposta)
+    {
+        return;
+    }
     try {
         const buscaId = await fetch(`${BASE_URL}/favoritas?id_tmdb=${idTmdb}`);
         const favoritos = await buscaId.json();
@@ -121,6 +126,7 @@ async function removerFavorito(idTmdb) {
 
         if (response.ok) {
             alert("Série removida dos favoritos!");
+            window.location.reload();       
         } else {
             alert("Erro ao remover dos favoritos.");
         }

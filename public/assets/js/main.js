@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000"; // URL do JSON Server
+const JSON_SERVER_URL = "http://localhost:3000"; // URL do JSON Server
 const TMDB_API_KEY = "2f10809f73d8fa55a72552fcb4d21da2";
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 const TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
@@ -60,7 +60,7 @@ async function loadNewSeries() {
 }
 
 async function loadAuthorInfo() {
-    const url = `${BASE_URL}/perfil`;
+    const url = `${JSON_SERVER_URL}/perfil`;
     const author = await fetchData(url);
 
     if (author) {
@@ -75,7 +75,7 @@ async function loadAuthorInfo() {
     }
 }
 async function loadFavoriteSeries() {
-    const url = `${BASE_URL}/favoritas`;
+    const url = `${JSON_SERVER_URL}/favoritas`;
     const favorites = await fetchData(url);
     const favoriteSeriesContainer = document.getElementById("favorite-series");
 
@@ -114,7 +114,7 @@ async function removerFavorito(idTmdb) {
         return;
     }
     try {
-        const buscaId = await fetch(`${BASE_URL}/favoritas?id_tmdb=${idTmdb}`);
+        const buscaId = await fetch(`${JSON_SERVER_URL}/favoritas?id_tmdb=${idTmdb}`);
         const favoritos = await buscaId.json();
         
         if (!buscaId.ok || favoritos.length === 0) {
@@ -124,7 +124,7 @@ async function removerFavorito(idTmdb) {
         
         const id_json_server = favoritos[0].id;
 
-        const response = await fetch(`${BASE_URL}/favoritas/${id_json_server}`, {
+        const response = await fetch(`${JSON_SERVER_URL}/favoritas/${id_json_server}`, {
             method: "DELETE"
         });
 

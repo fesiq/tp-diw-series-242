@@ -16,6 +16,11 @@ header nav a {
 #info-autor a {
     padding: 20px 10px;
 }
+#info-autor > img {
+    border-radius: 50%;
+    max-width: 180px;
+}
+
 #bio{
     font-style: italic;
 }
@@ -24,9 +29,4 @@ header nav a {
     height:400px;
     object-fit: cover;
     width: 100%;
-}
-
-#info-autor > img {
-    border-radius: 50%;
-    max-width: 180px;
 }

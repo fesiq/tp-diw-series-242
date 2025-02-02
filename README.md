@@ -20,14 +20,14 @@ Este projeto é um catálogo de séries que permite visualizar informações det
 
 ## 🔧 Como Executar o Projeto
 
-### 1️⃣ Clonar o repositório:
+### 1️⃣ Clonar o repositório
 
 ```sh
  git clone <URL_DO_REPOSITORIO>
  cd <NOME_DO_PROJETO>
 ```
 
-### 2️⃣ Instalar e rodar o JSON Server:
+### 2️⃣ Instalar e rodar o JSON Server
 
 Utilize o node.js para rodar o json-server, com as isntruções da  [nodejs.org](https://nodejs.org/), onde você pode baixar o instalador (Windows). Caso você use um sistema que possua gerenciamento de pacotes, como Linux, nesta página você também pode encontrar as instruções de instalação.
 
@@ -45,15 +45,14 @@ json-server --watch data/db.json --port 3000
 
 O JSON Server rodará em `http://localhost:3000/`
 
-### 3️⃣ Obter uma API Key do TMDB e configurar a API do TMDB:
-
+### 3️⃣ Obter uma API Key do TMDB e configurar a API do TMDB
 
 Para utilizar a API do TMDB, você precisa obter uma chave de API (API Key):
 
 - Acesse [TMDB.org](https://www.themoviedb.org/) e crie uma conta (caso ainda não tenha).
 - Após fazer login, vá até as configurações do seu perfil e clique em API.
 - Solicite uma API Key e copie o valor gerado.
-- Crie um arquivo `config.js` no diretório `/public/assets/js` e adicione sua chave da API: 
+- Crie um arquivo `config.js` no diretório `/public/assets/js` e adicione sua chave da API:
 
 ```js
 const CONFIG = {
@@ -66,9 +65,9 @@ const CONFIG = {
 
 > ⚠ **Importante**: Não compartilhe sua API Key publicamente!
 
-### 4️⃣ Abrir o projeto no navegador:
+### 4️⃣ Abrir o projeto no navegador
 
-Basta abrir o arquivo `index.html` no navegador digitando o endereço do json-server (http://localhost:3000).
+Basta abrir o arquivo `index.html` no navegador digitando o endereço do json-server [http://localhost:3000](http://localhost:3000).
 
 ## 📌 Observações
 
@@ -77,8 +76,8 @@ Basta abrir o arquivo `index.html` no navegador digitando o endereço do json-se
 - O json-server gera ids automaticamente para os registros dentro do db.json, que ***são diferentes*** dos ids no TMDB.
 
 ## 📄 Licença
+
 Este projeto é de livre uso para estudo e aprendizado.
 
 ---
 Feito com 💙 por Fernando Siqueira
-

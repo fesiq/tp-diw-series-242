@@ -25,3 +25,8 @@ header nav a {
     object-fit: cover;
     width: 100%;
 }
+
+#info-autor > img {
+    border-radius: 50%;
+    max-width: 180px;
+}

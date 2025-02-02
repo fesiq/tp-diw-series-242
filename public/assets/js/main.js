@@ -64,8 +64,9 @@ async function loadAuthorInfo() {
     if (author) {
         const authorInfo = document.getElementById("info-autor");
         authorInfo.innerHTML = `
+            <h2>Sobre o autor</h2>
             <img src="${author.avatar}">
-            <h3>${author.nome}</h3>
+            <h4>${author.nome}</h4>
             <p>${author.bio}</p>
             <p><strong>Email:</strong> ${author.email}</p>
         `;

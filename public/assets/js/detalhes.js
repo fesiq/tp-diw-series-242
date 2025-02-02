@@ -1,7 +1,7 @@
-const JSON_SERVER_URL = "http://localhost:3000/favoritas";
-const API_KEY = "2f10809f73d8fa55a72552fcb4d21da2";
-const BASE_URL = "https://api.themoviedb.org/3";
-const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
+const JSON_SERVER_FAVORITAS = "http://localhost:3000/favoritas";
+const TMDB_API_KEY = "2f10809f73d8fa55a72552fcb4d21da2";
+const TMDB_BASE_URL = "https://api.themoviedb.org/3";
+const TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
 
 // Elemento onde os detalhes serão exibidos
@@ -16,7 +16,7 @@ function getSeriesIdFromUrl() {
 // Função para buscar detalhes da série na API
 async function fetchSeriesDetails(seriesId) {
     try {
-        const response = await fetch(`${BASE_URL}/tv/${seriesId}?api_key=${API_KEY}&language=pt-BR&append_to_response=credits`);
+        const response = await fetch(`${TMDB_BASE_URL}/tv/${seriesId}?api_key=${TMDB_API_KEY}&language=pt-BR&append_to_response=credits`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -40,7 +40,7 @@ async function displaySeriesDetails(series) {
 
     detailsContainer.innerHTML = `
         <div class="col-md-4">
-            <img src="${poster_path ? IMAGE_BASE_URL + poster_path : './assets/img/no-image.png'}" class="img-fluid rounded" alt="${name}">
+            <img src="${poster_path ? TMDB_IMAGE_URL + poster_path : './assets/img/no-image.png'}" class="img-fluid rounded" alt="${name}">
         </div>
         <div class="col-md-8">
             <h2>${name}</h2>
@@ -51,7 +51,7 @@ async function displaySeriesDetails(series) {
             <p><strong>Elenco Principal:</strong> ${cast || "Informação não disponível."}</p>
         </div>
     `;
-    const response = await fetch(`${JSON_SERVER_URL}?id_tmdb=${series.id}`);
+    const response = await fetch(`${JSON_SERVER_FAVORITAS}?id_tmdb=${series.id}`);
     const data = await response.json();
 
     if (data.length > 0) {
@@ -83,7 +83,7 @@ async function loadSeriesDetails() {
 async function favoriteSeries(series) {
     try {
         // Checar se a série já está nos favoritos
-        const response = await fetch(`${JSON_SERVER_URL}?id_tmdb=${series.id}`);
+        const response = await fetch(`${JSON_SERVER_FAVORITAS}?id_tmdb=${series.id}`);
         const data = await response.json();
 
         if (data.length > 0) {
@@ -92,7 +92,7 @@ async function favoriteSeries(series) {
         }
 
         // Salvar nos favoritos
-        await fetch(JSON_SERVER_URL, {
+        await fetch(JSON_SERVER_FAVORITAS, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -119,7 +119,7 @@ async function removerFavorito(idTmdb) {
         return;
     }
     try {
-        const buscaId = await fetch(`${JSON_SERVER_URL}?id_tmdb=${idTmdb}`);
+        const buscaId = await fetch(`${JSON_SERVER_FAVORITAS}?id_tmdb=${idTmdb}`);
         const favoritos = await buscaId.json();
         
         if (!buscaId.ok || favoritos.length === 0) {
@@ -129,7 +129,7 @@ async function removerFavorito(idTmdb) {
         
         const id_json_server = favoritos[0].id;
 
-        const response = await fetch(`${JSON_SERVER_URL}/${id_json_server}`, {
+        const response = await fetch(`${JSON_SERVER_FAVORITAS}/${id_json_server}`, {
             method: "DELETE"
         });
 

@@ -25,10 +25,58 @@
   },
   "favoritas": [
     {
-      "id": "b7f3",
+      "id": "302b",
+      "id_tmdb": 257064,
+      "name": "Volta por Cima",
+      "poster_path": "/nyN8R0P1Hqwq7ksJz4O2BIAUd4W.jpg"
+    },
+    {
+      "id": "d469",
       "id_tmdb": 257048,
       "name": "Garota do Momento",
       "poster_path": "/jFSkjQSZ5Td52igalpoTQRuHtk.jpg"
+    },
+    {
+      "id": "20d8",
+      "id_tmdb": 93405,
+      "name": "Round 6",
+      "poster_path": "/6gcHdboppvplmBWxvROc96NJnmm.jpg"
+    },
+    {
+      "id": "20ef",
+      "id_tmdb": 218843,
+      "name": "The Seven Deadly Sins: Os Quatro Cavaleiros do Apocalipse",
+      "poster_path": "/aJnmS9S3m6BsSnzMNEnF0KPl9PC.jpg"
+    },
+    {
+      "id": "2df8",
+      "id_tmdb": 42444,
+      "name": "Os Cavaleiros do Zodíaco",
+      "poster_path": "/e4cC6W5sSAKE8lQYRBTqU9jfdya.jpg"
+    },
+    {
+      "id": "ae12",
+      "id_tmdb": 240411,
+      "name": "DAN DA DAN",
+      "poster_path": "/vtQug1eOyeU2VXIpNoDF1lTlcH4.jpg"
+    },
+    {
+      "id": "da6d",
+      "id_tmdb": 62568,
+      "name": "Yamada-kun and the Seven Witches",
+      "poster_path": "/duNjXCTArkT7dbHDNR5dD8ElLHI.jpg"
+    },
+    {
+      "id": "c822",
+      "id_tmdb": 12965,
+      "name": "Maria do Bairro",
+      "poster_path": "/xIwIgMAW9e2qUZN9gyYZS0xcdS6.jpg"
+    },
+    {
+      "id": "d357",
+      "id_tmdb": 65336,
+      "name": "March comes in like a lion",
+      "poster_path": "/ufgAYwzv6N2JrOWwyAkoGKMlMbo.jpg"
     }
   ]
 }

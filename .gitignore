@@ -2,5 +2,6 @@ node_modules
 package-lock.json
 package.json
 tp-diw-series.zip
+data/db.json
 public/assets/js/config.js
 public/assets/img/avatar.jpg

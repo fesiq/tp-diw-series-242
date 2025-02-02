@@ -36,7 +36,7 @@ function displayResults(series) {
                 <div class="card-body bg-dark">
                     <h5 class="card-title">${serie.name}</h5>
                     <p class="card-text">${serie.overview ? serie.overview.substring(0, 100) + '...' : 'Sem descrição disponível.'}</p>
-                    <a href="detalhes.html?id=${serie.id}" class="btn btn-primary">Ver Detalhes</a>
+                    <a href="detalhes.html?id_tmdb=${serie.id}" class="btn btn-primary">Ver Detalhes</a>
                 </div>
             </div>
         `;

@@ -21,13 +21,15 @@ async function loadPopularSeries() {
         const popularSeries = document.getElementById("popular-series");
         data.results.slice(0, 5).forEach((serie, index) => {
             popularSeries.innerHTML += `
-                <div class="carousel-item ${index === 0 ? "active" : ""}">
-                    <img src="${TMDB_IMAGE_URL}${serie.poster_path}" class="d-block w-100" alt="${serie.name}">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>${serie.name}</h5>
-                        <p>${serie.overview}</p>
+                    <div class="carousel-item ${index === 0 ? "active" : ""}">
+                        <a href="detalhes.html?id_imdb=${serie.id}">
+                        <img src="${TMDB_IMAGE_URL}${serie.poster_path}" class="d-block w-100" alt="${serie.name}">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>${serie.name}</h5>
+                            <p>${serie.overview}</p>
+                        </div>
+                        </a>
                     </div>
-                </div>
             `;
         });
     }

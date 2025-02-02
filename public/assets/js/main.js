@@ -88,6 +88,7 @@ async function loadFavoriteSeries() {
                         </div>
                         <div class="card-footer">
                             <a href="detalhes.html?id=${serie.id}" class="btn btn-primary">Saiba Mais</a>
+                            <a href="" class="btn btn-secondary">Remover dos favoritos</a>
                         </div>
                     </div>
                 </div>

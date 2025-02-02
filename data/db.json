@@ -31,12 +31,6 @@
       "poster_path": "/nyN8R0P1Hqwq7ksJz4O2BIAUd4W.jpg"
     },
     {
-      "id": "d469",
-      "id_tmdb": 257048,
-      "name": "Garota do Momento",
-      "poster_path": "/jFSkjQSZ5Td52igalpoTQRuHtk.jpg"
-    },
-    {
       "id": "20d8",
       "id_tmdb": 93405,
       "name": "Round 6",
@@ -77,6 +71,12 @@
       "id_tmdb": 65336,
       "name": "March comes in like a lion",
       "poster_path": "/ufgAYwzv6N2JrOWwyAkoGKMlMbo.jpg"
+    },
+    {
+      "id": "443d",
+      "id_tmdb": 252,
+      "name": "Todo Mundo Odeia o Chris",
+      "poster_path": "/dXyy1e3TJ5ut6DRCrQQT3TcsrGU.jpg"
     }
   ]
 }

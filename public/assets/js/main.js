@@ -22,7 +22,7 @@ async function loadPopularSeries() {
         data.results.slice(0, 5).forEach((serie, index) => {
             popularSeries.innerHTML += `
                     <div class="carousel-item ${index === 0 ? "active" : ""}">
-                        <a href="detalhes.html?id_imdb=${serie.id}">
+                        <a href="detalhes.html?id_tmdb=${serie.id}">
                         <img src="${TMDB_IMAGE_URL}${serie.poster_path}" class="d-block w-100" alt="${serie.name}">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>${serie.name}</h5>
@@ -50,7 +50,7 @@ async function loadNewSeries() {
                             <p class="card-text">${serie.overview.slice(0, 100)}...</p>
                         </div>
                         <div class="card-footer">
-                            <a href="detalhes.html?id_imdb=${serie.id}" class="btn btn-primary">Saiba Mais</a>
+                            <a href="detalhes.html?id_tmdb=${serie.id}" class="btn btn-primary">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@ async function loadFavoriteSeries() {
                             <h5 class="card-title">${serie.name}</h5>
                         </div>
                         <div class="card-footer">
-                            <a href="detalhes.html?id_imdb=${serie.id_tmdb}" class="btn btn-primary">Saiba Mais</a>
+                            <a href="detalhes.html?id_tmdb=${serie.id_tmdb}" class="btn btn-primary">Saiba Mais</a>
                             <a href="#favorite-series" class="btn btn-secondary btn-desfavoritar" serie-id-tmdb="${serie.id_tmdb}">Remover dos favoritos</a>
                         </div>
                     </div>

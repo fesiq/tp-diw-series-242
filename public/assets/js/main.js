@@ -116,10 +116,14 @@ async function removerFavorito(idTmdb) {
     try {
         const buscaId = await fetch(`${BASE_URL}/favoritas?id_tmdb=${idTmdb}`);
         const favoritos = await buscaId.json();
-
-        if(buscaId.ok){
-            id_json_server = favoritos[0].id;
+        
+        if (!buscaId.ok || favoritos.length === 0) {
+            alert("Erro: Série não encontrada nos favoritos.");
+            return;
         }
+        
+        const id_json_server = favoritos[0].id;
+
         const response = await fetch(`${BASE_URL}/favoritas/${id_json_server}`, {
             method: "DELETE"
         });

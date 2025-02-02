@@ -8,7 +8,7 @@ const resultsContainer = document.getElementById("results");
 
 async function fetchSeries(query) {
     try {
-        const response = await fetch(`${BASE_URL}/search/tv?api_key=${API_KEY}&query=${query}`);
+        const response = await fetch(`${BASE_URL}/search/tv?api_key=${API_KEY}&language=pt-BR&query=${query}`);
         const data = await response.json();
         return data.results;
     } catch (error) {

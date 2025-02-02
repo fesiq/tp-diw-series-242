@@ -26,7 +26,7 @@ async function fetchSeriesDetails(seriesId) {
 }
 
 // Função para exibir os detalhes da série
-function displaySeriesDetails(series) {
+async function displaySeriesDetails(series) {
     if (!series) {
         detailsContainer.innerHTML = `<p class="text-center">Erro ao carregar os detalhes da série.</p>`;
         return;
@@ -36,6 +36,7 @@ function displaySeriesDetails(series) {
     const cast = credits.cast.slice(0, 5).map(actor => actor.name).join(", ");
 
     const favoriteButton = createFavoriteButton(series);
+    const unfavoriteButton = createUnfavoriteButton(series);
 
     detailsContainer.innerHTML = `
         <div class="col-md-4">
@@ -50,7 +51,18 @@ function displaySeriesDetails(series) {
             <p><strong>Elenco Principal:</strong> ${cast || "Informação não disponível."}</p>
         </div>
     `;
-    detailsContainer.querySelector(".col-md-8").appendChild(favoriteButton);
+    const response = await fetch(`${JSON_SERVER_URL}?id_tmdb=${series.id}`);
+    const data = await response.json();
+
+    if (data.length > 0) {
+        detailsContainer.querySelector(".col-md-8").appendChild(unfavoriteButton);
+        return;
+    } else {
+        detailsContainer.querySelector(".col-md-8").appendChild(favoriteButton);
+        return;
+    }
+
+    
 }
 
 // Carregar detalhes ao abrir a página
@@ -93,9 +105,42 @@ async function favoriteSeries(series) {
         });
 
         alert("Série adicionada aos favoritos!");
+        window.location.reload();
     } catch (error) {
         console.error("Erro ao favoritar a série:", error);
         alert("Erro ao favoritar a série.");
+    }
+}
+
+async function removerFavorito(idTmdb) {
+    const resposta = confirm("Tem certeza de que quer remover a série dos favoritos?");
+    if(!resposta)
+    {
+        return;
+    }
+    try {
+        const buscaId = await fetch(`${JSON_SERVER_URL}?id_tmdb=${idTmdb}`);
+        const favoritos = await buscaId.json();
+        
+        if (!buscaId.ok || favoritos.length === 0) {
+            alert("Erro: Série não encontrada nos favoritos.");
+            return;
+        }
+        
+        const id_json_server = favoritos[0].id;
+
+        const response = await fetch(`${JSON_SERVER_URL}/${id_json_server}`, {
+            method: "DELETE"
+        });
+
+        if (response.ok) {
+            alert("Série removida dos favoritos!");
+            window.location.reload();
+        } else {
+            alert("Erro ao remover dos favoritos.");
+        }
+    } catch (error) {
+        console.error("Erro ao remover favorito:", error);
     }
 }
 
@@ -107,6 +152,18 @@ function createFavoriteButton(series) {
     button.innerText = "Favoritar Série";
 
     button.addEventListener("click", () => favoriteSeries(series));
+
+    return button;
+}
+
+// e o de desfavoritar
+function createUnfavoriteButton(series) {
+
+    const button = document.createElement("button");
+    button.className = "btn btn-secondary mt-3";
+    button.innerText = "Remover dos Favoritos";
+
+    button.addEventListener("click", () => removerFavorito(series.id));
 
     return button;
 }

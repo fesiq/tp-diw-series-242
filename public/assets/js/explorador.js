@@ -1,6 +1,6 @@
-const API_KEY = "2f10809f73d8fa55a72552fcb4d21da2";
-const BASE_URL = "https://api.themoviedb.org/3";
-const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
+const TMDB_API_KEY = "2f10809f73d8fa55a72552fcb4d21da2";
+const TMDB_BASE_URL = "https://api.themoviedb.org/3";
+const TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
@@ -8,7 +8,7 @@ const resultsContainer = document.getElementById("results");
 
 async function fetchSeries(query) {
     try {
-        const response = await fetch(`${BASE_URL}/search/tv?api_key=${API_KEY}&language=pt-BR&query=${query}`);
+        const response = await fetch(`${TMDB_BASE_URL}/search/tv?api_key=${TMDB_API_KEY}&language=pt-BR&query=${query}`);
         const data = await response.json();
         return data.results;
     } catch (error) {
@@ -32,7 +32,7 @@ function displayResults(series) {
         card.classList.add("col");
         card.innerHTML = `
             <div class="card h-100 bg-dark text-white">
-                <img src="${serie.poster_path ? IMAGE_BASE_URL + serie.poster_path : './assets/img/no-image.png'}" class="card-img-top" alt="${serie.name}">
+                <img src="${serie.poster_path ? TMDB_IMAGE_URL + serie.poster_path : './assets/img/no-image.png'}" class="card-img-top" alt="${serie.name}">
                 <div class="card-body bg-dark">
                     <h5 class="card-title">${serie.name}</h5>
                     <p class="card-text">${serie.overview ? serie.overview.substring(0, 100) + '...' : 'Sem descrição disponível.'}</p>

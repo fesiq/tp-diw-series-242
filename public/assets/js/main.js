@@ -97,14 +97,53 @@ async function loadFavoriteSeries() {
                         </div>
                         <div class="card-footer">
                             <a href="detalhes.html?id_imdb=${serie.id_tmdb}" class="btn btn-primary">Saiba Mais</a>
-                            <a href="" class="btn btn-secondary btn-desfavoritar" data-id="${serie.id_tmdb}">Remover dos favoritos</a>
+                            <a href="#favorite-series" class="btn btn-secondary btn-desfavoritar" serie-id-tmdb="${serie.id_tmdb}">Remover dos favoritos</a>
                         </div>
                     </div>
                 </div>
             `;
         });
+        adicionaEventListenerDesfavoritar();
     }
 }
+
+async function removerFavorito(idTmdb) {
+    try {
+        const buscaId = await fetch(`${BASE_URL}/favoritas?id_tmdb=${idTmdb}`);
+        const favoritos = await buscaId.json();
+
+        if(buscaId.ok){
+            id_json_server = favoritos[0].id;
+        }
+        const response = await fetch(`${BASE_URL}/favoritas/${id_json_server}`, {
+            method: "DELETE"
+        });
+
+        if (response.ok) {
+            alert("Série removida dos favoritos!");
+        } else {
+            alert("Erro ao remover dos favoritos.");
+        }
+    } catch (error) {
+        console.error("Erro ao remover favorito:", error);
+    }
+}
+
+function adicionaEventListenerDesfavoritar() {
+    const botoesRemover = document.querySelectorAll(".btn-desfavoritar");
+
+    botoesRemover.forEach(botao => {
+        botao.addEventListener("click", () => {
+            const serieId = botao.getAttribute("serie-id-tmdb");
+            if (serieId) {
+                removerFavorito(serieId);
+            }
+        });
+    });
+}
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     loadPopularSeries();
     loadNewSeries();
